@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# List of drives not to be displayed
+system_drives="/dev/nvme0n1
+/dev/nvme1n1"
+
+mountable=$(lsblk -lp | grep -e "part $" | awk '{print $1, "(" $4 ")"}')
+[ "${system_drives}" ] && mountable=$(echo "${mountable}" | grep -Ev "$(echo ${system_drives} | sed "s/\s/|/g")")
+[ -z "${mountable}" ] && exit 1
+
+chosen=$(echo "${mountable}" | dmenu -i -l 20 -p "Which drive to mount?" | awk '{print $1}')
+[ -z "${chosen}" ] && exit 1
+
+dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
+mountpoint=$(echo "${dirs}" | dmenu -i -l 20 -p "Mount point?")
+[ -z "${mountpoint}" ] && exit 1
+
+sudo_password=$(dmenu -P -p "Enter your password: ")
+
+if [ ! -d "${mountpoint}" ]; then
+    createdir=$(echo -e "Yes\nNo" | dmenu -i -p "${mountpoint} does not exist, create it?")
+    [ "${createdir}" = Yes ] && echo -n ${sudo_password} | sudo --stdin mkdir -p "${mountpoint}"
+fi
+
+echo -n ${sudo_password} | sudo --stdin mount -o umask=0022,gid=$(id -u),uid=$(id -u) ${chosen} ${mountpoint} && notify-send "${chosen} mounted to ${mountpoint}" || notify-send "Cannot mount ${chosen} to ${mountpoint}"

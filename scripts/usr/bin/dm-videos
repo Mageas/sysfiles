@@ -1,0 +1,18 @@
+#!/bin/sh
+
+options="mpv"
+
+CLIPBOARD="$(xclip -o)"
+if [ ${#CLIPBOARD} -gt 30 ]; then
+    visual="$(echo ${CLIPBOARD} | cut -c1-20)...$(echo ${CLIPBOARD} | cut -c$((${#CLIPBOARD} - 7))-)"
+else
+    visual="${CLIPBOARD}"
+fi
+
+choice=$(echo "${options}" | dmenu -i -p "How to open ${visual} ?")
+
+case "${choice}" in
+    mpv)
+        mpv ${CLIPBOARD}
+        ;;
+esac
