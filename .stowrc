@@ -1,4 +1,3 @@
 --target=/
 --no-folding
 --verbose
---ignore README.md
