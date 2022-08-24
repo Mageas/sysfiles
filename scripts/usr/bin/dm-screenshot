@@ -2,9 +2,9 @@
 
 path=$HOME/Images/Screenshots/$(date '+%Y%m%d-%H%M%S').png
 
-options="window
-selection
-screen"
+options="selection
+screen
+window"
 
 choice=$(echo "${options}" | dmenu -i -p "Which capture do you want?")
 
