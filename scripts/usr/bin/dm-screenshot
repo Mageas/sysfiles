@@ -9,13 +9,13 @@ screen"
 choice=$(echo "${options}" | dmenu -i -p "Which capture do you want?")
 
 case "${choice}" in
-    window)
-        maim -i $(xdotool getactivewindow) -u $path ; cat $path | xclip -selection clipboard -t image/png
-    ;;
     selection)
         maim -s -u $path ; cat $path | xclip -selection clipboard -t image/png
     ;;
     screen)
         maim -u $path ; cat $path | xclip -selection clipboard -t image/png
+    ;;
+    window)
+        maim -i $(xdotool getactivewindow) -u $path ; cat $path | xclip -selection clipboard -t image/png
     ;;
 esac
