@@ -40,13 +40,6 @@ ${redf}   ██▀▀▀▀██    ${greenf}  ██▀▀▀▀██    ${y
 ${redf}   █      █    ${greenf}  █      █    ${yellowf}  █      █    ${bluef}  █      █    ${purplef}  █      █    ${cyanf}  █      █   
 ${redf}  █  ▄▀▀▄  █   ${greenf} █  ▄▀▀▄  █   ${yellowf} █  ▄▀▀▄  █   ${bluef} █  ▄▀▀▄  █   ${purplef} █  ▄▀▀▄  █   ${cyanf} █  ▄▀▀▄  █ 
 ${redf} █ ▄█▬▄▄▬█▄ █  ${greenf}█ ▄█▬▄▄▬█▄ █  ${yellowf}█ ▄█▬▄▄▬█▄ █  ${bluef}█ ▄█▬▄▄▬█▄ █  ${purplef}█ ▄█▬▄▄▬█▄ █  ${cyanf}█ ▄█▬▄▄▬█▄ █
-
-${boldon}
-${redf}    ▄████▄     ${greenf}   ▄████▄     ${yellowf}   ▄████▄     ${bluef}   ▄████▄     ${purplef}   ▄████▄     ${cyanf}   ▄████▄   
-${redf}   ██▀▀▀▀██    ${greenf}  ██▀▀▀▀██    ${yellowf}  ██▀▀▀▀██    ${bluef}  ██▀▀▀▀██    ${purplef}  ██▀▀▀▀██    ${cyanf}  ██▀▀▀▀██
-${redf}   █      █    ${greenf}  █      █    ${yellowf}  █      █    ${bluef}  █      █    ${purplef}  █      █    ${cyanf}  █      █   
-${redf}  █  ▄▀▀▄  █   ${greenf} █  ▄▀▀▄  █   ${yellowf} █  ▄▀▀▄  █   ${bluef} █  ▄▀▀▄  █   ${purplef} █  ▄▀▀▄  █   ${cyanf} █  ▄▀▀▄  █ 
-${redf} █ ▄█▬▄▄▬█▄ █  ${greenf}█ ▄█▬▄▄▬█▄ █  ${yellowf}█ ▄█▬▄▄▬█▄ █  ${bluef}█ ▄█▬▄▄▬█▄ █  ${purplef}█ ▄█▬▄▄▬█▄ █  ${cyanf}█ ▄█▬▄▄▬█▄ █
 ${reset}
 
 EOF
